@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class SaudacaoUtilTest {
 
     @Test
-    @DisplayName("Deve saudar com bom dia")
+    @DisplayName("Dado um horário matutino, Quando saudar, Então deve retornar bom dia")
     public void saudarBomDia() {
         int horaValida = 9;
         String saudacao = saudar(horaValida);
@@ -18,7 +18,7 @@ class SaudacaoUtilTest {
     }
 
     @Test
-    @DisplayName("Deve saudar com boa tarde")
+    @DisplayName("Dado um horário vespertino, Quando saudar, Então deve retornar boa tarde")
     public void saudarBoaTarde() {
         int horaValida = 14;
         String saudacao = saudar(horaValida);
@@ -26,7 +26,7 @@ class SaudacaoUtilTest {
     }
 
     @Test
-    @DisplayName("Deve saudar com boa noite")
+    @DisplayName("Dado um horário noturno, Quando saudar, Então deve retornar boa noite")
     public void saudarBoaNoite() {
         int horaValida = 22;
         String saudacao = saudar(horaValida);
@@ -34,7 +34,7 @@ class SaudacaoUtilTest {
     }
 
     @Test
-    @DisplayName("Deve lançar exceção quando a hora for inválida")
+    @DisplayName("Dado um horário inválido, Quando saudar, Então deve lançar uma exceção")
     public void deveLancarException() {
         int horaInvalida = -10;
         IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> saudar(horaInvalida));
@@ -42,7 +42,7 @@ class SaudacaoUtilTest {
     }
 
     @Test
-    @DisplayName("Não deve lançar exceção quando a hora for válida")
+    @DisplayName("Dado um horário válido, Quando saudar, Então não deve lançar  uma exceção")
     public void naoDeveLancarException() {
         int horaValida = 0;
         assertDoesNotThrow(() -> saudar(horaValida));

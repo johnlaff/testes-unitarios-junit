@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class PessoaTest {
 
     @Test
-    @DisplayName("Deve criar uma pessoa com nome e sobrenome")
+    @DisplayName("Dado um nome e sobrenome, Quando criar uma pessoa, Então deve retornar o nome completo")
     public void assercaoAgrupada() {
         Pessoa pessoa = new Pessoa("Alex", "Silva");
 
