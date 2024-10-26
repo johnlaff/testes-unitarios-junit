@@ -7,8 +7,8 @@ public class ContaBancaria {
     private BigDecimal saldo;
 
     public ContaBancaria(BigDecimal saldo) {
-        if (saldo == null) {
-            throw new IllegalArgumentException("Saldo não pode ser nulo");
+        if (saldo == null || saldo.compareTo(BigDecimal.ZERO) == 0 || saldo.compareTo(BigDecimal.ZERO) < 0) {
+            throw new IllegalArgumentException("Saldo inicial inválido");
         }
         this.saldo = saldo;
     }
